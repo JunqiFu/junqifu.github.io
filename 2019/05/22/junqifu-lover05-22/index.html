@@ -198,6 +198,16 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
     <!-- 百度统计  -->
     
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?768122917f911cf699ca4d105dab7494";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
     <!-- 谷歌统计  -->
     
 </head>
@@ -278,11 +288,6 @@ height:50vh;
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
                     <span class="post-intro-time">2019/05/22</span>
-                    
-                    <span id="busuanzi_container_page_pv" class="busuanzi-pv">
-                        <span class="iconfont-archer">&#xe602;</span>
-                        <span id="busuanzi_value_page_pv"></span>
-                    </span>
                     
                     <span class="shareWrapper">
                         <span class="iconfont-archer shareIcon">&#xe71d;</span>
@@ -417,7 +422,7 @@ height:50vh;
             <p>原文作者：<a href="https://junqifu.github.io">JunqiFu</a>
             </p><p>原文链接：<a href="https://junqifu.github.io/2019/05/22/junqifu-lover05-22/">https://junqifu.github.io/2019/05/22/junqifu-lover05-22/</a>
             </p><p>发表日期：<a href="https://junqifu.github.io/2019/05/22/junqifu-lover05-22/">May 22nd 2019, 11:43:17 pm</a>
-            </p><p>更新日期：<a href="https://junqifu.github.io/2019/05/22/junqifu-lover05-22/">May 22nd 2019, 11:44:16 pm</a>
+            </p><p>更新日期：<a href="https://junqifu.github.io/2019/05/22/junqifu-lover05-22/">May 23rd 2019, 9:12:18 am</a>
             </p><p>版权声明：FEI-JunqiFu 本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可</p>
         </div>
     
@@ -447,6 +452,22 @@ height:50vh;
 
     
     
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <div id="comment"></div>
+    <script>
+    new Valine({
+        el: '#comment' ,
+        notify:false, 
+        verify:false, 
+        appId: "2uVnmgU3A3YOQqJm7RdG5Bx2-gzGzoHsz",
+        appKey: "FPklKqf3cP8WCv5NjvwyCVV4",
+        placeholder: "",
+        path:window.location.pathname, 
+        avatar:'mm' 
+    });
+    </script>
+
 
     <!-- 评论 -->
 </main>
@@ -522,13 +543,6 @@ height:50vh;
         <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
     </div>
     <!-- 不蒜子  -->
-    
-    <div class="busuanzi-container">
-    
-     
-    <span id="busuanzi_container_site_pv">PV: <span id="busuanzi_value_site_pv"></span> :)</span>
-    
-    </div>
     
 </footer>
     </div>
@@ -623,12 +637,12 @@ top:50vh;
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/2019/05/22/junqiFu05-22/">Hexo + git + GitHub 做一个内容发布展示页</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/2019/05/22/junqiFu-images05-22/">如何在.md文件中添加自己的图片内容</a>
         </li>
     
     
         <li class="archive-post-item">
-            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/2019/05/22/junqiFu-images05-22/">如何在.md文件中添加自己的图片内容</a>
+            <span class="archive-post-date">05/22</span><a class="archive-post-title" href="/2019/05/22/junqiFu05-22/">Hexo + git + GitHub 做一个内容发布展示页</a>
         </li>
     
     
@@ -641,9 +655,11 @@ top:50vh;
         <div class="sidebar-panel-tags">
     <div class="sidebar-tags-name">
     
-        <span class="sidebar-tag-name" data-tags="hexo-asset-image"><span class="iconfont-archer">&#xe606;</span>hexo-asset-image</span>
+        <span class="sidebar-tag-name" data-tags="Hello"><span class="iconfont-archer">&#xe606;</span>Hello</span>
     
         <span class="sidebar-tag-name" data-tags="hexo"><span class="iconfont-archer">&#xe606;</span>hexo</span>
+    
+        <span class="sidebar-tag-name" data-tags="hexo-asset-image"><span class="iconfont-archer">&#xe606;</span>hexo-asset-image</span>
     
         <span class="sidebar-tag-name" data-tags="日记"><span class="iconfont-archer">&#xe606;</span>日记</span>
     
@@ -706,8 +722,6 @@ jsonContent:
     
     <!-- busuanzi  -->
     
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-    
     <!-- CNZZ  -->
     
     </div>
@@ -715,7 +729,7 @@ jsonContent:
     
         <script src="/scripts/share.js" async></script>    
      
-    </body>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
 </html>
 
 
