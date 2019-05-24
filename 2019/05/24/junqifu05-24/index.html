@@ -22,7 +22,7 @@
     <meta name="description" content="JunqiFu Story Collection,个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>JunqiFu</title>
+    <title>Hexo同时部署到 GitHub 和 Gitee(码云) · JunqiFu</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -213,12 +213,23 @@
 </head>
 
     
+        <body class="post-body">
+    
     
 <header class="header">
 
     <div class="read-progress"></div>
     <div class="header-sidebar-menu">&#xe775;</div>
     <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">JunqiFu.</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">Hexo同时部署到 GitHub 和 Gitee(码云)</a>
+            </div>
+    </div>
     
     <a class="home-link" href="/">JunqiFu.</a>
 </header>
@@ -230,24 +241,69 @@
 
 
 
+
+height:50vh;
 ">
     
     <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
             
     <div class="site-intro-placeholder"></div>
-    <div class="site-intro-img" style="background-image: url(/)"></div>
+    <div class="site-intro-img" style="background-image: url(/intro/post-bg.jpg)"></div>
     <div class="site-intro-meta">
         <!-- 标题  -->
         <h1 class="intro-title">
             <!-- 主页  -->
+            
+            Hexo同时部署到 GitHub 和 Gitee(码云)
+            <!-- 404 -->
             
         </h1>
         <!-- 副标题 -->
         <p class="intro-subtitle">
             <!-- 主页副标题  -->
             
+            
+            <!-- 404 -->
+            
         </p>
         <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">752</span>阅读时长: <span class="post-count reading-time">2 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/05/24</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
         
     </div>
 </div>
@@ -348,311 +404,109 @@
 </script>        
         <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
         <div class="container container-unloaded">
-            <main class="main index-page">
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/24/junqifu05-24/">
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>Hexo同时部署到 GitHub 和 Gitee(码云)</span>
-        </a>
-        <div class="abstract-content">
-            记录 Hexo 博客同时部署到GitHub和Gitee
-效果图预览
+            <main class="main post-page">
+    <article class="article-entry">
+        <h1 id="记录-Hexo-博客同时部署到GitHub和Gitee"><a href="#记录-Hexo-博客同时部署到GitHub和Gitee" class="headerlink" title="记录 Hexo 博客同时部署到GitHub和Gitee"></a>记录 Hexo 博客同时部署到GitHub和Gitee</h1><blockquote>
+<p>效果图预览</p>
+</blockquote>
+<p><img src="/2019/05/24/junqifu05-24/../junqifu05-24/github.jpg" alt="GitHub" title="GitHub"></p>
+<hr>
+<p><img src="/2019/05/24/junqifu05-24/../junqifu05-24/gitee.jpg" alt="Gitee" title="Gitee"></p>
+<h2 id="整个流程"><a href="#整个流程" class="headerlink" title="整个流程"></a>整个流程</h2><h3 id="前置条件"><a href="#前置条件" class="headerlink" title="前置条件"></a>前置条件</h3><ol>
+<li>安装了Git 并且安装了 node.js 同时了解并且在GitHub部署了hexo</li>
+<li>拥有GitHub和Gitee 账户</li>
+<li>同时将本地 ssh公钥保存至GitHub和Gitee账户</li>
+</ol>
+<hr>
+<p>前三个步骤可以自行百度</p>
+<p>在 hexo 中的 _config.yml 配置文件中配置  deploy 参数</p>
+<p>参考hexo官方文档内容</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">deploy:</span><br><span class="line">- type: git</span><br><span class="line">  repo:</span><br><span class="line">- type: heroku</span><br><span class="line">  repo:</span><br></pre></td></tr></table></figure>
+<p>delpoy 中 type 部署的类型 上传GitHub和Gitee都是 git 方式 </p>
+<p>heroku 是另外一个云平台暂时不做介绍 <a href="https://www.heroku.com" target="_blank" rel="noopener">参考网址</a></p>
+<pre><code class="官方介绍">Heroku是一个完全托管的基于容器的云平台，具有集成的数据服务和强大的生态系统，可用于部署和运行现代应用程序。
+</code></pre>
+<p>根据hexo官方文档内容，你的deploy应该是这样的：</p>
+<pre><code>deploy:
+  - type: git
+    repo: (填写你的github仓库地址 Https 链接)
+    branch: master(你要提交的分支 一般默认主分支)
+  - type: git
+    repo: (填写你的Gitee仓库地址 ssh 链接)
+    branch: master(你要提交的分支 一般默认主分支)
+</code></pre><blockquote>
+<p>其中,有一点需要注意的 在码云上，如果在repo 填写 Https 链接，会出现错误</p>
+</blockquote>
+<p><img src="/2019/05/24/junqifu05-24/../junqifu05-24/gitee_erro.jpg" alt="Gitee" title="Gitee"></p>
+<p>解决方式就是 采用ssh链接就可以了</p>
+<p><img src="/2019/05/24/junqifu05-24/../junqifu05-24/gitee_ssh.jpg" alt="Gitee" title="Gitee"></p>
+<p>具体原因是git 提交中GitHub和Gitee 用户名和密码不一致导致的，所以采用两种提交方式就不会报错了，这里要说一下 https 提交和ssh提交之间的区别 </p>
+<pre><code>- 在使用ssh方式时，是不需要验证用户名和密码，如果你在配置ssh里， key时设置了密码，则需要验证密码
 
-
-
-
-整个流程前置条件
-安装了Git 并且安装了 node.js 同时了解并且在GitHub部署了hexo
-拥有GitHub和Gitee 账户
-同时将本地 ssh公钥保存至GitHub和Gitee账户
-
-
-前三个步骤可以自行百度
-在 hexo 中的 _config.yml 配置文件中配置  deploy 参数
-参考hexo官方文档内容
-12345deploy:- type: git  repo:- type: heroku  repo:
-delpoy 中 type 部署的类型 上传GitHub和Gitee都是 git ...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/24</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-</div>
-            
-        </div>
+- 而对于使用https方式来讲，每次push都需要验证用户名和密码
+</code></pre><p>设置完成后就可以 直接在hexo文件夹下打开git bash  输入命令行上传了</p>
+<h4 id="本地浏览："><a href="#本地浏览：" class="headerlink" title="本地浏览："></a>本地浏览：</h4><pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo s
+</code></pre><h4 id="部署到GitHub和Gitee："><a href="#部署到GitHub和Gitee：" class="headerlink" title="部署到GitHub和Gitee："></a>部署到GitHub和Gitee：</h4><pre><code>hexo clean &amp;&amp; hexo g &amp;&amp; hexo d
+</code></pre><blockquote>
+<p>ps：在修改_config.yml 文件和写hexo命令行的过程中一定注意要留空行，也就是hexo原文档中所说的 <a href="https://hexo.io/zh-cn/docs/deployment.html" target="_blank" rel="noopener">注意缩进</a></p>
+</blockquote>
+<blockquote>
+<p> 为什么要将你的博客同时部署到GitHub和Gitee？（写这篇文章意义）</p>
+</blockquote>
+<ol>
+<li>提高访问速度，GitHub一直是我的主要阵地，但是访问速度上始终Gitee要快一些</li>
+<li>记录我填过的那些坑</li>
+<li>数据备份，当然这一点对我来说并不是很重要，因为我目前的博客才起步，所以价值不大，但是还是要有备份意识</li>
+<li>扩大受众人群，相对来说，可能看你文章的人仅仅是对相关方面产生兴趣的人，并没有GitHub或者Gitee账号，你的文章在GitHub和Gitee同时发布会提高你的文章被阅读的机会，当然更好做法，是你能够做好网站的SEO，提高百度和Google排名</li>
+</ol>
+<h3 id="结语：每天学习、每日天成长、点滴积累、成就高峰"><a href="#结语：每天学习、每日天成长、点滴积累、成就高峰" class="headerlink" title="结语：每天学习、每日天成长、点滴积累、成就高峰"></a>结语：每天学习、每日天成长、点滴积累、成就高峰</h3>
     </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/23/junqiFu05-23/">
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>我为什要搭建自己的博客</span>
-        </a>
-        <div class="abstract-content">
-            
-我为什要搭建自己的博客
-雀语文章
-
-在知乎上看到一篇文章，解释了为什么我要建立自己的博客，觉得写的很棒，现在转载到我的博客上，内容如下：
-一个选择我知道现在可能说这话有点不合时宜，毕竟博客时代都已经过去了，再号召大家用过就好像时的东西是不是有点逆流而上？
-我曾经也问过自己这个问题，但是我觉得，博客时代过去跟我们要开博客是没有多大关系的，就好像你的读书时代已经过去你就不再读书一样。
-判断一件事情值不值得去做有一个方法：在一张白纸的左边写不值得做的原因，然后在右边写值得做的原因，写完一比较，一权衡，自然能够得出结果。
-大家都成年人了，你会觉得这样思考分析总结的过程才是正确的思考的方法吧？
-...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="摘录">摘录</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/23/523/">
-            
-                <span class="stick-top iconfont-archer">&#xe63d;</span>
-                
-                <span>世界上最遥远的距离</span>
-        </a>
-        <div class="abstract-content">
-            
-
-泰戈尔诗-摘录
-
-世界上最遥远的距离世界上最遥远的距离The furthest distance in the world不是生与死的距离is not the way from birth to the end.而是我就站在你面前It is when I stand in front of you你却不知道我爱你but you don’t understand I love you.世界上最遥远的距离The furthest distance in the world不是我就站在你面前is not when I stand in front of you你却不知道我爱你you don...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="摘录">摘录</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/23/images/">
-            
-                <span>收录好看的图片</span>
-        </a>
-        <div class="abstract-content">
-            
-收录好看的图片
-
-
-
-
-图片均来自网络，如有侵权，请联系我，QQ邮箱：1769459858@qq.com
-你也想展示其他图片，请首页关注微信，发送给我你的图片！
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/23</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="images">images</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/22/junqifu-lover05-22/">
-            
-                <span>恋爱笔记</span>
-        </a>
-        <div class="abstract-content">
-            欢迎来到JunqiFu个人博客!这是我的第一篇关于我和她的日记.她是谁?我的女友,我称之为鑫.她的确很独特,如果你了解她,相信你也会喜欢她的个性. 如果你想了解更多我们的内容,请持续关注我的日记.或者你也可以在想和你聊天查看其他的内容.
-寄语
-我们的开始
-
-1不得不说,我们相处的时间还不够长,还需要互相了解彼此,慢慢的熟悉彼此的个性/爱好/家庭...,不过这并不妨碍我们互相喜欢,人生很难说会遇到一个对的人,但是和你在一起,我觉得你就是我对的那个人.
-
-一个内秀的人,没有花言巧语,不是他不懂,是他笨拙,不知如何表达
-希望你能喜欢,我想记录的不仅仅是一份恋爱,我想写下余生,普普通通,平平淡淡...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="日记">日记</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/22/junqiFu-images05-22/">
-            
-                <span>JunqiFu首页</span>
-        </a>
-        <div class="abstract-content">
-            #GitHub Page首页
-JunqiFu首页
-
-
-hexo+GitHub存储一段时光
-
-在这里感谢 hexo-theme-archer 主题的制作者 fi3ework 非常棒的主题
-不管喜欢与否，总要留点痕迹，不枉学习过这些知识
-推荐阮一峰的博客阮一峰的个人网站 浏览周五的每周分享，是我的日常，希望你也能喜欢
-我的雀语笔记雀语，雀语是一个很棒的云端知识库，你可以在上面建立自己的知识库和技术日志等，也可以浏览学习其他人的笔记，希望我们共同成长
-
-
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="index">index</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/22/hello-world/">
-            
-                <span>Hello World</span>
-        </a>
-        <div class="abstract-content">
-            Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
-Quick StartCreate a new post1$ hexo new "My New Post"
-More info: Writing
-Run server1$ hexo server
-More...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="Hello">Hello</a>
-    
-</div>
-            
-        </div>
-    </article>
-    
-    
-    
-    
-    
-    
-    <article class="index-post">
-        <a class="abstract-title" href="/2019/05/22/junqiFu05-22/">
-            
-                <span>Hexo + git + GitHub 做一个内容发布展示页</span>
-        </a>
-        <div class="abstract-content">
-            我的第一篇文章
-Hexo + git + GitHub 做一个内容发布展示页
-
-在github和gitee page上建立同步更新的静态页面内容所使用的工具Hexo+git所需的资料：GitHub和码云的内容库码云：https://gitee.com/junqifu/junqifu.gitGitHub：https://github.com/JunqiFu/junqifu.github.io.gitHexo网址：https://hexo.io/zh-cn/Git网址：https://git-scm.com/Hexo 主题 archer：https://github.com/fi3ework...
-        </div>
-        <div class="abstract-post-meta">
-            <!-- date  -->
-            <div class="abstract-date">
-                <span class="abstract-calander iconfont-archer">&#xe676;</span><span class="abstract-time">2019/05/22</span>
-            </div>
-            <!-- tags  -->
-            
-            <div class="abstract-tags">
-    
-        <a class="post-tag" href="javascript:void(0);" data-tags="hexo">hexo</a>
-    
-</div>
-            
-        </div>
-    </article>
+    <!-- license  -->
     
     <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/2019/05/23/junqiFu05-23/" title="我为什要搭建自己的博客">
+                    <div class="prevTitle">我为什要搭建自己的博客</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
     
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <div id="comment"></div>
+    <script>
+    new Valine({
+        el: '#comment' ,
+        notify:false, 
+        verify:false, 
+        appId: "2uVnmgU3A3YOQqJm7RdG5Bx2-gzGzoHsz",
+        appKey: "FPklKqf3cP8WCv5NjvwyCVV4",
+        placeholder: "",
+        path:window.location.pathname, 
+        avatar:'mm' 
+    });
+    </script>
+
+
+    <!-- 评论 -->
 </main>
             <!-- profile -->
             
@@ -730,6 +584,24 @@ Hexo + git + GitHub 做一个内容发布展示页
 </footer>
     </div>
     <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#记录-Hexo-博客同时部署到GitHub和Gitee"><span class="toc-number">1.</span> <span class="toc-text">记录 Hexo 博客同时部署到GitHub和Gitee</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#整个流程"><span class="toc-number">1.1.</span> <span class="toc-text">整个流程</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#前置条件"><span class="toc-number">1.1.1.</span> <span class="toc-text">前置条件</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#本地浏览："><span class="toc-number">1.1.1.1.</span> <span class="toc-text">本地浏览：</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#部署到GitHub和Gitee："><span class="toc-number">1.1.1.2.</span> <span class="toc-text">部署到GitHub和Gitee：</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#结语：每天学习、每日天成长、点滴积累、成就高峰"><span class="toc-number">1.1.2.</span> <span class="toc-text">结语：每天学习、每日天成长、点滴积累、成就高峰</span></a></li></ol></li></ol></li></ol>
+    </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
     <div class="sidebar sidebar-hide">
@@ -973,6 +845,8 @@ jsonContent:
     
     </div>
     <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
      
 	<!-- 页面点击小红心 -->
     <script type="text/javascript" src="/scripts/click.js "></script>
