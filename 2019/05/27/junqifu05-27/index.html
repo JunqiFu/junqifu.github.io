@@ -22,7 +22,7 @@
     <meta name="description" content="JunqiFu Story Collection,个人博客">
     <meta http-equiv="Cache-control" content="no-cache">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>Hello World · JunqiFu</title>
+    <title>Hexo如何加密自己的文章 · JunqiFu</title>
     <style type="text/css">
     @font-face {
         font-family: 'Oswald-Regular';
@@ -227,7 +227,7 @@
                 <a href="/">JunqiFu.</a>
             </div>
             <div class="post-title">
-                <a href="#" class="post-name">Hello World</a>
+                <a href="#" class="post-name">Hexo如何加密自己的文章</a>
             </div>
     </div>
     
@@ -257,7 +257,7 @@ height:50vh;
         <h1 class="intro-title">
             <!-- 主页  -->
             
-            Hello World
+            Hexo如何加密自己的文章
             <!-- 404 -->
             
         </h1>
@@ -276,18 +276,18 @@ height:50vh;
                 
                     <div class="post-intro-tags">
     
-        <a class="post-tag" href="javascript:void(0);" data-tags="Hello">Hello</a>
+        <a class="post-tag" href="javascript:void(0);" data-tags="Hexo 插件">Hexo 插件</a>
     
 </div>
                 
                 
                     <div class="post-intro-read">
-                        <span>字数统计: <span class="post-count word-count">73</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                        <span>字数统计: <span class="post-count word-count">237</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
                     </div>
                 
                 <div class="post-intro-meta">
                     <span class="post-intro-calander iconfont-archer">&#xe676;</span>
-                    <span class="post-intro-time">2019/05/22</span>
+                    <span class="post-intro-time">2019/05/27</span>
                     
                     <span class="shareWrapper">
                         <span class="iconfont-archer shareIcon">&#xe71d;</span>
@@ -406,16 +406,20 @@ height:50vh;
         <div class="container container-unloaded">
             <main class="main post-page">
     <article class="article-entry">
-        <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
-<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
-<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
-<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
-<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
-
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="“内容限定阅读，如果有疑问请留言评论！”">
+    <label for="pass">“内容限定阅读，如果有疑问请留言评论！”</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
     </article>
     <!-- license  -->
     
@@ -423,17 +427,12 @@ height:50vh;
     <ul class="post-paginator">
         <li class="next">
             
-                <div class="nextSlogan">Next Post</div>
-                <a href="/2019/05/22/junqiFu-images05-22/" title="JunqiFu首页">
-                    <div class="nextTitle">JunqiFu首页</div>
-                </a>
-            
         </li>
         <li class="previous">
             
                 <div class="prevSlogan">Previous Post</div>
-                <a href="/2019/05/22/junqiFu05-22/" title="Hexo + git + GitHub 做一个内容发布展示页">
-                    <div class="prevTitle">Hexo + git + GitHub 做一个内容发布展示页</div>
+                <a href="/2019/05/24/junqifu-language/" title="日本語テスト|中文繁體|English">
+                    <div class="prevTitle">日本語テスト|中文繁體|English</div>
                 </a>
             
         </li>
@@ -561,7 +560,7 @@ top:50vh;
         <div class="toc-catalog">
             <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
         </div>
-        <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Quick-Start"><span class="toc-number">1.</span> <span class="toc-text">Quick Start</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Create-a-new-post"><span class="toc-number">1.1.</span> <span class="toc-text">Create a new post</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Run-server"><span class="toc-number">1.2.</span> <span class="toc-text">Run server</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generate-static-files"><span class="toc-number">1.3.</span> <span class="toc-text">Generate static files</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Deploy-to-remote-sites"><span class="toc-number">1.4.</span> <span class="toc-text">Deploy to remote sites</span></a></li></ol></li></ol>
+        
     </div>
     
     <div class="back-top iconfont-archer">&#xe639;</div>
