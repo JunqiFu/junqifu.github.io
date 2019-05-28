@@ -1,0 +1,12 @@
+  新建草稿文件的命令：
+  
+  hexo new draft "new draft"
+  
+   
+  预览草稿文件命令：
+
+  hexo server --drafts
+
+  发布草稿文件命令：
+
+  hexo publish drafts "new-draft"
