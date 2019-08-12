@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="JunqiFu">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="JunqiFu">
+    
+    <meta name="keywords" content="Junqi,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="JunqiFu Story Collection,个人博客">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>随笔记录 · Junqi</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?768122917f911cf699ca4d105dab7494";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Junqi</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">随笔记录</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Junqi</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(https://uploadbeta.com/api/pictures/random/)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            随笔记录
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Extract">Extract</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">174</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/08/06</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="如果你确定浏览，请输入访问密码🙈">
+    <label for="pass">如果你确定浏览，请输入访问密码🙈</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/article/faba78c9/" title="推荐两首好听的音乐">
+                    <div class="nextTitle">推荐两首好听的音乐</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/article/b7cb51c8/" title="5G时代的认识与思考">
+                    <div class="prevTitle">5G时代的认识与思考</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <div id="comment"></div>
+    <script>
+    new Valine({
+        el: '#comment' ,
+        notify:false, 
+        verify:false, 
+        appId: "2uVnmgU3A3YOQqJm7RdG5Bx2-gzGzoHsz",
+        appKey: "FPklKqf3cP8WCv5NjvwyCVV4",
+        placeholder: "",
+        path:window.location.pathname, 
+        avatar:'mm' 
+    });
+    </script>
+
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:1769459858@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/JunqiFu" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 10
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/06</span><a class="archive-post-title" href="/article/faba78c9/">推荐两首好听的音乐</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/06</span><a class="archive-post-title" href="/article/1c8e8bdd/">随笔记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/14</span><a class="archive-post-title" href="/article/b7cb51c8/">5G时代的认识与思考</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/article/81d814de/">Coding+Gridea搭建个人博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/1ff6794c/">Hexo 博客同时部署到GitHub和Gitee</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/aabd3274/">始于你</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/b7fb4495/">听那些无法忘怀的音乐</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/b840255a/">語学テスト（语言测试）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/406c0b37/">Hexo+GitHub 搭建博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/fc225454/">为什要搭建自己的博客</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Tutorial"><span class="iconfont-archer">&#xe606;</span>Tutorial</span>
+    
+        <span class="sidebar-tag-name" data-tags="Extract"><span class="iconfont-archer">&#xe606;</span>Extract</span>
+    
+        <span class="sidebar-tag-name" data-tags="Introduction"><span class="iconfont-archer">&#xe606;</span>Introduction</span>
+    
+        <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Test"><span class="iconfont-archer">&#xe60a;</span>Test</span>
+    
+        <span class="sidebar-category-name" data-categories="教程"><span class="iconfont-archer">&#xe60a;</span>教程</span>
+    
+        <span class="sidebar-category-name" data-categories="摘录"><span class="iconfont-archer">&#xe60a;</span>摘录</span>
+    
+        <span class="sidebar-category-name" data-categories="介绍"><span class="iconfont-archer">&#xe60a;</span>介绍</span>
+    
+        <span class="sidebar-category-name" data-categories="日记"><span class="iconfont-archer">&#xe60a;</span>日记</span>
+    
+        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "JunqiFu"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <!-- CNZZ  -->
+    
+    <div style="display: none">
+        <script src="https://s13.cnzz.com/z_stat.php?id=1277635791&web_id=1277635791" language="JavaScript"></script>
+        
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+	<!-- 页面点击小红心 -->
+    <script type="text/javascript" src="/scripts/click.js "></script>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+

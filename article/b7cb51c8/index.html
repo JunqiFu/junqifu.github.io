@@ -1,0 +1,812 @@
+<!DOCTYPE html>
+<html lang="">
+    <!-- title -->
+
+
+
+
+<!-- keywords -->
+
+
+
+
+<head><meta name="generator" content="Hexo 3.8.0">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <meta name="author" content="JunqiFu">
+    <meta name="renderer" content="webkit">
+    <meta name="copyright" content="JunqiFu">
+    
+    <meta name="keywords" content="Junqi,hexo-theme,hexo-blog">
+    
+    <meta name="description" content="JunqiFu Story Collection,个人博客">
+    <meta http-equiv="Cache-control" content="no-cache">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>5G时代的认识与思考 · Junqi</title>
+    <style type="text/css">
+    @font-face {
+        font-family: 'Oswald-Regular';
+        src: url("/font/Oswald-Regular.ttf");
+    }
+
+    body {
+        margin: 0;
+    }
+
+    header,
+    footer,
+    .back-top,
+    .sidebar,
+    .container,
+    .site-intro-meta,
+    .toc-wrapper {
+        display: none;
+    }
+
+    .site-intro {
+        position: relative;
+        z-index: 3;
+        width: 100%;
+        /* height: 50vh; */
+        overflow: hidden;
+    }
+
+    .site-intro-placeholder {
+        position: absolute;
+        z-index: -2;
+        top: 0;
+        left: 0;
+        width: calc(100% + 300px);
+        height: 100%;
+        background: repeating-linear-gradient(-45deg, #444 0, #444 80px, #333 80px, #333 160px);
+        background-position: center center;
+        transform: translate3d(-226px, 0, 0);
+        animation: gradient-move 2.5s ease-out 0s infinite;
+    }
+
+    @keyframes gradient-move {
+        0% {
+            transform: translate3d(-226px, 0, 0);
+        }
+        100% {
+            transform: translate3d(0, 0, 0);
+        }
+    }
+
+</style>
+
+    <link rel="preload" href="/css/style.css?v=20180824" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <link rel="stylesheet" href="/css/mobile.css?v=20180824" media="(max-width: 980px)">
+    
+    <link rel="preload" href="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    
+    <!-- /*! loadCSS. [c]2017 Filament Group, Inc. MIT License */
+/* This file is meant as a standalone workflow for
+- testing support for link[rel=preload]
+- enabling async CSS loading in browsers that do not support rel=preload
+- applying rel preload css once loaded, whether supported or not.
+*/ -->
+<script>
+(function( w ){
+	"use strict";
+	// rel=preload support test
+	if( !w.loadCSS ){
+		w.loadCSS = function(){};
+	}
+	// define on the loadCSS obj
+	var rp = loadCSS.relpreload = {};
+	// rel=preload feature support test
+	// runs once and returns a function for compat purposes
+	rp.support = (function(){
+		var ret;
+		try {
+			ret = w.document.createElement( "link" ).relList.supports( "preload" );
+		} catch (e) {
+			ret = false;
+		}
+		return function(){
+			return ret;
+		};
+	})();
+
+	// if preload isn't supported, get an asynchronous load by using a non-matching media attribute
+	// then change that media back to its intended value on load
+	rp.bindMediaToggle = function( link ){
+		// remember existing media attr for ultimate state, or default to 'all'
+		var finalMedia = link.media || "all";
+
+		function enableStylesheet(){
+			link.media = finalMedia;
+		}
+
+		// bind load handlers to enable media
+		if( link.addEventListener ){
+			link.addEventListener( "load", enableStylesheet );
+		} else if( link.attachEvent ){
+			link.attachEvent( "onload", enableStylesheet );
+		}
+
+		// Set rel and non-applicable media type to start an async request
+		// note: timeout allows this to happen async to let rendering continue in IE
+		setTimeout(function(){
+			link.rel = "stylesheet";
+			link.media = "only x";
+		});
+		// also enable media after 3 seconds,
+		// which will catch very old browsers (android 2.x, old firefox) that don't support onload on link
+		setTimeout( enableStylesheet, 3000 );
+	};
+
+	// loop through link elements in DOM
+	rp.poly = function(){
+		// double check this to prevent external calls from running
+		if( rp.support() ){
+			return;
+		}
+		var links = w.document.getElementsByTagName( "link" );
+		for( var i = 0; i < links.length; i++ ){
+			var link = links[ i ];
+			// qualify links to those with rel=preload and as=style attrs
+			if( link.rel === "preload" && link.getAttribute( "as" ) === "style" && !link.getAttribute( "data-loadcss" ) ){
+				// prevent rerunning on link
+				link.setAttribute( "data-loadcss", true );
+				// bind listeners to toggle media back
+				rp.bindMediaToggle( link );
+			}
+		}
+	};
+
+	// if unsupported, run the polyfill
+	if( !rp.support() ){
+		// run once at least
+		rp.poly();
+
+		// rerun poly on an interval until onload
+		var run = w.setInterval( rp.poly, 500 );
+		if( w.addEventListener ){
+			w.addEventListener( "load", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		} else if( w.attachEvent ){
+			w.attachEvent( "onload", function(){
+				rp.poly();
+				w.clearInterval( run );
+			} );
+		}
+	}
+
+
+	// commonjs
+	if( typeof exports !== "undefined" ){
+		exports.loadCSS = loadCSS;
+	}
+	else {
+		w.loadCSS = loadCSS;
+	}
+}( typeof global !== "undefined" ? global : this ) );
+</script>
+
+    <link rel="icon" href="/assets/favicon.ico">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js" as="script">
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js" as="script">
+    <link rel="preload" href="/scripts/main.js" as="script">
+    <link rel="preload" as="font" href="/font/Oswald-Regular.ttf" crossorigin>
+    <link rel="preload" as="font" href="https://at.alicdn.com/t/font_327081_1dta1rlogw17zaor.woff" crossorigin>
+    
+    <!-- fancybox -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fancybox/3.2.5/jquery.fancybox.min.js" defer></script>
+    <!-- 百度统计  -->
+    
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+        var hm = document.createElement("script");
+        hm.src = "https://hm.baidu.com/hm.js?768122917f911cf699ca4d105dab7494";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    
+    <!-- 谷歌统计  -->
+    
+</head>
+
+    
+        <body class="post-body">
+    
+    
+<header class="header">
+
+    <div class="read-progress"></div>
+    <div class="header-sidebar-menu">&#xe775;</div>
+    <!-- post页的toggle banner  -->
+    
+    <div class="banner">
+            <div class="blog-title">
+                <a href="/">Junqi</a>
+            </div>
+            <div class="post-title">
+                <a href="#" class="post-name">5G时代的认识与思考</a>
+            </div>
+    </div>
+    
+    <a class="home-link" href="/">Junqi</a>
+</header>
+    <div class="wrapper">
+        <div class="site-intro" style="
+
+
+
+
+
+
+
+height:50vh;
+">
+    
+    <!-- 主页  -->
+    
+    
+    <!-- 404页  -->
+            
+    <div class="site-intro-placeholder"></div>
+    <div class="site-intro-img" style="background-image: url(https://uploadbeta.com/api/pictures/random/)"></div>
+    <div class="site-intro-meta">
+        <!-- 标题  -->
+        <h1 class="intro-title">
+            <!-- 主页  -->
+            
+            5G时代的认识与思考
+            <!-- 404 -->
+            
+        </h1>
+        <!-- 副标题 -->
+        <p class="intro-subtitle">
+            <!-- 主页副标题  -->
+            
+            
+            <!-- 404 -->
+            
+        </p>
+        <!-- 文章页meta -->
+        
+            <div class="post-intros">
+                <!-- 文章页标签  -->
+                
+                    <div class="post-intro-tags">
+    
+        <a class="post-tag" href="javascript:void(0);" data-tags="Extract">Extract</a>
+    
+</div>
+                
+                
+                    <div class="post-intro-read">
+                        <span>字数统计: <span class="post-count word-count">260</span>阅读时长: <span class="post-count reading-time">1 min</span></span>
+                    </div>
+                
+                <div class="post-intro-meta">
+                    <span class="post-intro-calander iconfont-archer">&#xe676;</span>
+                    <span class="post-intro-time">2019/06/14</span>
+                    
+                    <span class="shareWrapper">
+                        <span class="iconfont-archer shareIcon">&#xe71d;</span>
+                        <span class="shareText">Share</span>
+                        <ul class="shareList">
+                            <li class="iconfont-archer share-qr" data-type="qr">&#xe75b;
+                                <div class="share-qrcode"></div>
+                            </li>
+                            <li class="iconfont-archer" data-type="weibo">&#xe619;</li>
+                            <li class="iconfont-archer" data-type="qzone">&#xe62e;</li>
+                            <li class="iconfont-archer" data-type="twitter">&#xe634;</li>
+                            <li class="iconfont-archer" data-type="facebook">&#xe67a;</li>
+                        </ul>
+                    </span>
+                </div>
+            </div>
+        
+    </div>
+</div>
+        <script>
+ 
+  // get user agent
+  var browser = {
+    versions: function () {
+      var u = window.navigator.userAgent;
+      return {
+        userAgent: u,
+        trident: u.indexOf('Trident') > -1, //IE内核
+        presto: u.indexOf('Presto') > -1, //opera内核
+        webKit: u.indexOf('AppleWebKit') > -1, //苹果、谷歌内核
+        gecko: u.indexOf('Gecko') > -1 && u.indexOf('KHTML') == -1, //火狐内核
+        mobile: !!u.match(/AppleWebKit.*Mobile.*/), //是否为移动终端
+        ios: !!u.match(/\(i[^;]+;( U;)? CPU.+Mac OS X/), //ios终端
+        android: u.indexOf('Android') > -1 || u.indexOf('Linux') > -1, //android终端或者uc浏览器
+        iPhone: u.indexOf('iPhone') > -1 || u.indexOf('Mac') > -1, //是否为iPhone或者安卓QQ浏览器
+        iPad: u.indexOf('iPad') > -1, //是否为iPad
+        webApp: u.indexOf('Safari') == -1, //是否为web应用程序，没有头部与底部
+        weixin: u.indexOf('MicroMessenger') == -1, //是否为微信浏览器
+        uc: u.indexOf('UCBrowser') > -1 //是否为android下的UC浏览器
+      };
+    }()
+  }
+  console.log("userAgent:" + browser.versions.userAgent);
+
+  // callback
+  function fontLoaded() {
+    console.log('font loaded');
+    if (document.getElementsByClassName('site-intro-meta')) {
+      document.getElementsByClassName('intro-title')[0].classList.add('intro-fade-in');
+      document.getElementsByClassName('intro-subtitle')[0].classList.add('intro-fade-in');
+      var postIntros = document.getElementsByClassName('post-intros')[0]
+      if (postIntros) {
+        postIntros.classList.add('post-fade-in');
+      }
+    }
+  }
+
+  // UC不支持跨域，所以直接显示
+  function asyncCb(){
+    if (browser.versions.uc) {
+      console.log("UCBrowser");
+      fontLoaded();
+    } else {
+      WebFont.load({
+        custom: {
+          families: ['Oswald-Regular']
+        },
+        loading: function () {  //所有字体开始加载
+          // console.log('loading');
+        },
+        active: function () {  //所有字体已渲染
+          fontLoaded();
+        },
+        inactive: function () { //字体预加载失败，无效字体或浏览器不支持加载
+          console.log('inactive: timeout');
+          fontLoaded();
+        },
+        timeout: 5000 // Set the timeout to two seconds
+      });
+    }
+  }
+
+  function asyncErr(){
+    console.warn('script load from CDN failed, will load local script')
+  }
+
+  // load webfont-loader async, and add callback function
+  function async(u, cb, err) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (cb) { o.addEventListener('load', function (e) { cb(null, e); }, false); }
+    if (err) { o.addEventListener('error', function (e) { err(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+
+  var asyncLoadWithFallBack = function(arr, success, reject) {
+      var currReject = function(){
+        reject()
+        arr.shift()
+        if(arr.length)
+          async(arr[0], success, currReject)
+        }
+
+      async(arr[0], success, currReject)
+  }
+
+  asyncLoadWithFallBack([
+    "https://cdn.jsdelivr.net/npm/webfontloader@1.6.28/webfontloader.min.js", 
+    "https://cdn.bootcss.com/webfont/1.6.28/webfontloader.js",
+    "/lib/webfontloader.min.js"
+  ], asyncCb, asyncErr)
+</script>        
+        <img class="loading" src="/assets/loading.svg" style="display: block; margin: 6rem auto 0 auto; width: 6rem; height: 6rem;" />
+        <div class="container container-unloaded">
+            <main class="main post-page">
+    <article class="article-entry">
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<div id="hbe-security">
+  <div class="hbe-input-container">
+  <input type="password" class="hbe-form-control" id="pass" placeholder="如果你确定浏览，请输入访问密码🙈">
+    <label for="pass">如果你确定浏览，请输入访问密码🙈</label>
+    <div class="bottom-line"></div>
+  </div>
+</div>
+<div id="decryptionError" style="display: none;">Incorrect Password!</div>
+<div id="noContentError" style="display: none;">No content to display!</div>
+<div id="encrypt-blog" style="display:none">
+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
+</div>
+<script src="/lib/crypto-js.js"></script><script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">
+    </article>
+    <!-- license  -->
+    
+    <!-- paginator  -->
+    <ul class="post-paginator">
+        <li class="next">
+            
+                <div class="nextSlogan">Next Post</div>
+                <a href="/article/1c8e8bdd/" title="随笔记录">
+                    <div class="nextTitle">随笔记录</div>
+                </a>
+            
+        </li>
+        <li class="previous">
+            
+                <div class="prevSlogan">Previous Post</div>
+                <a href="/article/81d814de/" title="Coding+Gridea搭建个人博客">
+                    <div class="prevTitle">Coding+Gridea搭建个人博客</div>
+                </a>
+            
+        </li>
+    </ul>
+    <!-- 评论插件 -->
+    <!-- 来必力City版安装代码 -->
+
+<!-- City版安装代码已完成 -->
+    
+    
+    <!-- partial('_partial/comment/changyan') -->
+    <!--PC版-->
+
+
+    
+    
+    <script src="//cdn1.lncld.net/static/js/3.0.4/av-min.js"></script>
+    <script src="//unpkg.com/valine/dist/Valine.min.js"></script>
+    <div id="comment"></div>
+    <script>
+    new Valine({
+        el: '#comment' ,
+        notify:false, 
+        verify:false, 
+        appId: "2uVnmgU3A3YOQqJm7RdG5Bx2-gzGzoHsz",
+        appKey: "FPklKqf3cP8WCv5NjvwyCVV4",
+        placeholder: "",
+        path:window.location.pathname, 
+        avatar:'mm' 
+    });
+    </script>
+
+
+    <!-- 评论 -->
+</main>
+            <!-- profile -->
+            
+        </div>
+        <footer class="footer footer-unloaded">
+    <!-- social  -->
+    
+    <div class="social">
+        
+    
+        
+            
+                <a href="mailto:1769459858@qq.com" class="iconfont-archer email" title="email"></a>
+            
+        
+    
+        
+            
+                <a href="//github.com/JunqiFu" class="iconfont-archer github" target="_blank" title="github"></a>
+            
+        
+    
+        
+            
+                <span class="iconfont-archer wechat" title="wechat">
+                  
+                  <img class="profile-qr" src="/assets/example_qr.png">
+                </span>
+            
+        
+    
+
+    </div>
+    
+    <!-- powered by Hexo  -->
+    <div class="copyright">
+        <span id="hexo-power">Powered by <a href="https://hexo.io/" target="_blank">Hexo</a></span><span class="iconfont-archer power">&#xe635;</span><span id="theme-info">theme <a href="https://github.com/fi3ework/hexo-theme-archer" target="_blank">Archer</a></span>
+    </div>
+    <!-- 不蒜子  -->
+    
+</footer>
+    </div>
+    <!-- toc -->
+    
+    <div class="toc-wrapper" style=
+    
+
+
+
+
+
+
+
+top:50vh;
+
+    >
+        <div class="toc-catalog">
+            <span class="iconfont-archer catalog-icon">&#xe613;</span><span>CATALOG</span>
+        </div>
+        
+    </div>
+    
+    <div class="back-top iconfont-archer">&#xe639;</div>
+    <div class="sidebar sidebar-hide">
+    <ul class="sidebar-tabs sidebar-tabs-active-0">
+        <li class="sidebar-tab-archives"><span class="iconfont-archer">&#xe67d;</span><span class="tab-name">Archive</span></li>
+        <li class="sidebar-tab-tags"><span class="iconfont-archer">&#xe61b;</span><span class="tab-name">Tag</span></li>
+        <li class="sidebar-tab-categories"><span class="iconfont-archer">&#xe666;</span><span class="tab-name">Cate</span></li>
+    </ul>
+    <div class="sidebar-content sidebar-content-show-archive">
+          <div class="sidebar-panel-archives">
+    <!-- 在ejs中将archive按照时间排序 -->
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    <div class="total-and-search">
+        <div class="total-archive">
+        Total : 10
+        </div>
+        <!-- search  -->
+        
+    </div>
+    
+    <div class="post-archive">
+    
+    
+    
+    
+    <div class="archive-year"> 2019 </div>
+    <ul class="year-list">
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/06</span><a class="archive-post-title" href="/article/faba78c9/">推荐两首好听的音乐</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">08/06</span><a class="archive-post-title" href="/article/1c8e8bdd/">随笔记录</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/14</span><a class="archive-post-title" href="/article/b7cb51c8/">5G时代的认识与思考</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">06/04</span><a class="archive-post-title" href="/article/81d814de/">Coding+Gridea搭建个人博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/1ff6794c/">Hexo 博客同时部署到GitHub和Gitee</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/aabd3274/">始于你</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/b7fb4495/">听那些无法忘怀的音乐</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/b840255a/">語学テスト（语言测试）</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/406c0b37/">Hexo+GitHub 搭建博客</a>
+        </li>
+    
+    
+        <li class="archive-post-item">
+            <span class="archive-post-date">05/28</span><a class="archive-post-title" href="/article/fc225454/">为什要搭建自己的博客</a>
+        </li>
+    
+    </ul></div>
+  </div>
+        <div class="sidebar-panel-tags">
+    <div class="sidebar-tags-name">
+    
+        <span class="sidebar-tag-name" data-tags="Test"><span class="iconfont-archer">&#xe606;</span>Test</span>
+    
+        <span class="sidebar-tag-name" data-tags="Tutorial"><span class="iconfont-archer">&#xe606;</span>Tutorial</span>
+    
+        <span class="sidebar-tag-name" data-tags="Extract"><span class="iconfont-archer">&#xe606;</span>Extract</span>
+    
+        <span class="sidebar-tag-name" data-tags="Introduction"><span class="iconfont-archer">&#xe606;</span>Introduction</span>
+    
+        <span class="sidebar-tag-name" data-tags="Love"><span class="iconfont-archer">&#xe606;</span>Love</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-tags-empty">&#xe678;</div>
+    <div class="tag-load-fail" style="display: none; color: #ccc; font-size: 0.6rem;">
+    缺失模块。<br>
+    1、请确保node版本大于6.2<br>
+    2、在博客根目录（注意不是archer根目录）执行以下命令：<br>
+    <span style="color: #f75357; font-size: 1rem; line-height: 2rem;">npm i hexo-generator-json-content --save</span><br>
+    3、在根目录_config.yml里添加配置：
+    <pre style="color: #787878; font-size: 0.6rem;">
+jsonContent:
+  meta: false
+  pages: false
+  posts:
+    title: true
+    date: true
+    path: true
+    text: false
+    raw: false
+    content: false
+    slug: false
+    updated: false
+    comments: false
+    link: false
+    permalink: false
+    excerpt: false
+    categories: true
+    tags: true</pre>
+    </div> 
+    <div class="sidebar-tags-list"></div>
+</div>
+        <div class="sidebar-panel-categories">
+    <div class="sidebar-categories-name">
+    
+        <span class="sidebar-category-name" data-categories="Test"><span class="iconfont-archer">&#xe60a;</span>Test</span>
+    
+        <span class="sidebar-category-name" data-categories="教程"><span class="iconfont-archer">&#xe60a;</span>教程</span>
+    
+        <span class="sidebar-category-name" data-categories="摘录"><span class="iconfont-archer">&#xe60a;</span>摘录</span>
+    
+        <span class="sidebar-category-name" data-categories="介绍"><span class="iconfont-archer">&#xe60a;</span>介绍</span>
+    
+        <span class="sidebar-category-name" data-categories="日记"><span class="iconfont-archer">&#xe60a;</span>日记</span>
+    
+        <span class="sidebar-category-name" data-categories="测试"><span class="iconfont-archer">&#xe60a;</span>测试</span>
+    
+    </div>
+    <div class="iconfont-archer sidebar-categories-empty">&#xe678;</div>
+    <div class="sidebar-categories-list"></div>
+</div>
+    </div>
+</div> 
+    <script>
+    var siteMeta = {
+        root: "/",
+        author: "JunqiFu"
+    }
+</script>
+    <!-- CDN failover -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.3.1/dist/jquery.min.js"></script>
+    <script type="text/javascript">
+        if (typeof window.$ === 'undefined')
+        {
+            console.warn('jquery load from jsdelivr failed, will load local script')
+            document.write('<script src="/lib/jquery.min.js">\x3C/script>')
+        }
+    </script>
+    <script src="/scripts/main.js"></script>
+    <!-- algolia -->
+    
+    <!-- busuanzi  -->
+    
+    <!-- CNZZ  -->
+    
+    <div style="display: none">
+        <script src="https://s13.cnzz.com/z_stat.php?id=1277635791&web_id=1277635791" language="JavaScript"></script>
+        
+    </div>
+    <!-- async load share.js -->
+    
+        <script src="/scripts/share.js" async></script>    
+     
+	<!-- 页面点击小红心 -->
+    <script type="text/javascript" src="/scripts/click.js "></script>
+    <script src="/live2dw/lib/L2Dwidget.min.js?094cbace49a39548bed64abff5988b05"></script><script>L2Dwidget.init({"log":false,"pluginJsPath":"lib/","pluginModelPath":"assets/","pluginRootPath":"live2dw/","tagMode":false});</script></body>
+</html>
+
+
